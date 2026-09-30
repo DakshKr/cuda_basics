@@ -1,0 +1,4 @@
+# Ignore compiled executables and object files
+*.o
+*.out
+main
