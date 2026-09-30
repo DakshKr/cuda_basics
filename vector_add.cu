@@ -4,6 +4,9 @@
 
 __global__ void vector_add(const int *a, const int *b, int *c, int size) {
     int index = blockIdx.x * blockDim.x + threadIdx.x;
+    if (index == 0 || index == 23479) {
+        printf("[GPU Kernel] Executing on Block %d, Thread %d\n", blockIdx.x, threadIdx.x);
+    }
     if (index < size) {
         c[index] = a[index] + b[index];
     }
